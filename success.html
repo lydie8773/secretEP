@@ -13,14 +13,23 @@
             <div class="detailContent">
                 <div class="linkPanel">
                     <label class="link">Click here:</label>
-                    <div><a>http://cnprback.epay-net.org/easypay-server-mvc/fwkbo/common/bdd/queryDB.html</a></div><br>
+                    <div><a href="http://cnprback.epay-net.org/easypay-server-mvc/fwkbo/common/bdd/queryDB.html">Easypay db</a></div><br>
                 </div>
                 <div class="loginPanel">
                     <label class="loginname">Your login name:</label>
                     <div>Z23KXU</div><br>
                     <label class="loginname">Password:</label>
                     <div>decathlon.</div><br>
+                    <label class="loginname">Script:</label>
+                    <div>select tl.tlog_value<br>
+                        from epay.transaction t<br>
+                        inner join epay.transaction_detail td on td.transact_id = t.transact_id<br>
+                        inner join epay. transaction_logs tl on tl.td_id = td.td_id<br>
+                        inner join epay.transaction_status ts on ts.ts_id = t.ts_id<br>
+                        where tl.tlog_key in ('cardNumber','pinCode')<br>
+                        and t.order_id = '%Order_id%'</div><br>
                 </div>
+                <a href="https://lydie8773.github.io/secretEP/">Click here to return login</a>
             </div>
         </div>
     </body>

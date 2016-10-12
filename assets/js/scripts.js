@@ -13,7 +13,7 @@ function login() {
 	}
 }
 function validateUser(name, passd) {
-	if(name=='admin'&&passd=='admin'){
+	if(name=='Z23KXU'&&passd=='decathlon.'){
 		return true;
 	}else{
 		return false;
