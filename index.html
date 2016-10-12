@@ -1,7 +1,71 @@
 <!DOCTYPE html>
-<html>
-<body>
-<h1>Hello world</h1>
-<p>Yeah</p>
-</body>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+            <title></title>
+            <style type="text/css">
+                .loginPanel {
+                    width: 400px;
+                    height: 300px;
+                    border: 2px solid #42b983;
+                    border-radius: 3px;
+                    background-color: #fff;
+                    margin: 0 auto;
+                }
+            #username, #password {
+                width: 220px;
+                height: 18px;
+                margin-left:5px;
+            }
+            .loginContent {
+                width: 90%;
+                margin-top: 100px;
+                
+            }
+            button {
+                margin-left: 135px;
+                margin-top: 20px;
+                width: 80px;
+                height: 30px;
+            }
+            .passwordPanel {
+                margin-top: 20px;
+                
+            }
+            .usernamePanel, .passwordPanel {
+                text-align: right;
+            }
+            </style>
+            <script type="text/javascript">
+                function login() {
+                    var username = document.getElementById('username').value;
+                    var password = document.getElementById('password').value;
+                    if(validateUser(username,password)){
+                        window.location.href = "./success.html";
+                    }else{
+                        window.location.href = "./error.html";
+                    }
+            }
+            function validateUser(name, passd) {
+                if(name=='admin'&&passd=='admin'){
+                    return true;
+                }else{
+                    return false;
+                }
+            }
+                    </script>
+    </head>
+    <body>
+        <div class="loginPanel">
+            <div class="loginContent">
+                <div class="usernamePanel">
+                    <label for="username" class="usernameLabel">username:</label><input type="text" id="username"/>
+                </div>
+                <div class="passwordPanel">
+                    <label for="password" class="passwordLabel">password:</label><input type="password" id="password"/><br>
+                </div>
+                <button onclick="login()">login</button>
+            </div>
+        </div>
+    </body>
 </html>
